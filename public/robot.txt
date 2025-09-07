@@ -1,0 +1,16 @@
+# robots.txt for BharatComfort
+
+User-agent: *
+Allow: /
+
+# Disallow sensitive paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /superadmin/
+Disallow: /dashboard/
+Disallow: /partner/
+
+# Sitemap locations
+Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://yourdomain.com/sitemap-listings.xml
+Sitemap: https://yourdomain.com/sitemap-stories.xml
