@@ -1,0 +1,82 @@
+{
+  "app": {
+    "title": "Global Travel & Hospitality",
+    "tagline": "Discover. Book. Experience the world."
+  },
+  "nav": {
+    "home": "Home",
+    "listings": "Listings",
+    "planner": "Travel Planner",
+    "stories": "Stories",
+    "dashboard": "Dashboard",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout"
+  },
+  "search": {
+    "placeholder": "Search by country, state, or city",
+    "filters": "Filters",
+    "results": "Search Results",
+    "mapView": "Map View",
+    "listView": "List View",
+    "noResults": "No results found"
+  },
+  "listings": {
+    "featured": "Featured Listings",
+    "trending": "Trending Now",
+    "addListing": "Add Listing",
+    "details": "Listing Details",
+    "pricePerNight": "Price per night",
+    "pricePerMeal": "Price per meal",
+    "pricePerExperience": "Price per experience",
+    "bookNow": "Book Now"
+  },
+  "planner": {
+    "title": "Travel Planner",
+    "newPlan": "Create New Plan",
+    "myPlans": "My Plans",
+    "addDestination": "Add Destination",
+    "startDate": "Start Date",
+    "endDate": "End Date"
+  },
+  "stories": {
+    "title": "Travel Stories",
+    "newStory": "Share Your Story",
+    "write": "Write your travel experience...",
+    "publish": "Publish"
+  },
+  "dashboard": {
+    "user": "User Dashboard",
+    "partner": "Partner Dashboard",
+    "admin": "Admin Dashboard",
+    "superadmin": "Superadmin Dashboard",
+    "bookings": "My Bookings",
+    "myListings": "My Listings",
+    "pendingApproval": "Pending Approval"
+  },
+  "auth": {
+    "chooseRole": "Continue as",
+    "user": "User",
+    "partner": "Partner",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "registerNow": "Register Now",
+    "haveAccount": "Already have an account?",
+    "noAccount": "Don't have an account?"
+  },
+  "booking": {
+    "priceBreakdown": "Price Breakdown",
+    "cleaningFee": "Cleaning Fee",
+    "serviceFee": "Service Fee",
+    "tax": "Tax",
+    "total": "Total",
+    "confirm": "Confirm Booking",
+    "success": "Booking confirmed!",
+    "cancelled": "Booking cancelled."
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "madeWith": "Made with ❤️ for travelers worldwide"
+  }
+}
