@@ -86,6 +86,34 @@ export default function LoginPage() {
             className="text-blue-600 hover:underline"
           >
             {t("register")}
+            import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+
+const handleLogin = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setLoading(true);
+  setError("");
+
+  try {
+    const auth = getAuth();
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    const idToken = await userCredential.user.getIdToken();
+
+    // Call API to set secure cookie
+    await fetch("/api/auth/session", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ idToken, locale }),
+    });
+
+    router.push(`/${locale}`);
+  } catch (err: any) {
+    console.error("Login failed:", err);
+    setError(err.message || t("login_failed"));
+  } finally {
+    setLoading(false);
+  }
+};
+
           </a>
         </p>
       </div>
