@@ -1,0 +1,82 @@
+{
+  "app": {
+    "title": "BHARATCOMFORT",
+    "tagline": "खोजें। बुक करें। दुनिया का अनुभव करें।"
+  },
+  "nav": {
+    "home": "होम",
+    "listings": "लिस्टिंग",
+    "planner": "ट्रैवल प्लानर",
+    "stories": "कहानियाँ",
+    "dashboard": "डैशबोर्ड",
+    "login": "लॉगिन",
+    "register": "रजिस्टर",
+    "logout": "लॉगआउट"
+  },
+  "search": {
+    "placeholder": "देश, राज्य या शहर से खोजें",
+    "filters": "फ़िल्टर",
+    "results": "खोज परिणाम",
+    "mapView": "मानचित्र दृश्य",
+    "listView": "सूची दृश्य",
+    "noResults": "कोई परिणाम नहीं मिला"
+  },
+  "listings": {
+    "featured": "विशेष लिस्टिंग",
+    "trending": "ट्रेंडिंग",
+    "addListing": "नई लिस्टिंग जोड़ें",
+    "details": "लिस्टिंग विवरण",
+    "pricePerNight": "प्रति रात कीमत",
+    "pricePerMeal": "प्रति भोजन कीमत",
+    "pricePerExperience": "प्रति अनुभव कीमत",
+    "bookNow": "अभी बुक करें"
+  },
+  "planner": {
+    "title": "ट्रैवल प्लानर",
+    "newPlan": "नया प्लान बनाएं",
+    "myPlans": "मेरे प्लान",
+    "addDestination": "डेस्टिनेशन जोड़ें",
+    "startDate": "प्रारंभ तिथि",
+    "endDate": "समाप्ति तिथि"
+  },
+  "stories": {
+    "title": "यात्रा कहानियाँ",
+    "newStory": "अपनी कहानी साझा करें",
+    "write": "अपना यात्रा अनुभव लिखें...",
+    "publish": "प्रकाशित करें"
+  },
+  "dashboard": {
+    "user": "यूज़र डैशबोर्ड",
+    "partner": "पार्टनर डैशबोर्ड",
+    "admin": "एडमिन डैशबोर्ड",
+    "superadmin": "सुपरएडमिन डैशबोर्ड",
+    "bookings": "मेरी बुकिंग्स",
+    "myListings": "मेरी लिस्टिंग",
+    "pendingApproval": "स्वीकृति लंबित"
+  },
+  "auth": {
+    "chooseRole": "जारी रखें",
+    "user": "यूज़र",
+    "partner": "पार्टनर",
+    "email": "ईमेल",
+    "password": "पासवर्ड",
+    "confirmPassword": "पासवर्ड की पुष्टि करें",
+    "registerNow": "अभी रजिस्टर करें",
+    "haveAccount": "पहले से खाता है?",
+    "noAccount": "खाता नहीं है?"
+  },
+  "booking": {
+    "priceBreakdown": "मूल्य विवरण",
+    "cleaningFee": "सफाई शुल्क",
+    "serviceFee": "सेवा शुल्क",
+    "tax": "कर",
+    "total": "कुल",
+    "confirm": "बुकिंग की पुष्टि करें",
+    "success": "बुकिंग सफल!",
+    "cancelled": "बुकिंग रद्द।"
+  },
+  "footer": {
+    "rights": "सभी अधिकार सुरक्षित।",
+    "madeWith": "यात्रियों के लिए ❤️ के साथ बनाया गया"
+  }
+}
