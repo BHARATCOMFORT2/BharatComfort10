@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -------------------
+   Global Resets
+------------------- */
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  background-color: #f9fafb; /* light gray */
+  color: #111827; /* near-black */
+  height: 100%;
+}
+
+/* Ensure full height app */
+#__next,
+body,
+html {
+  min-height: 100%;
+}
+
+/* -------------------
+   Links
+------------------- */
+a {
+  color: #2563eb; /* blue-600 */
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* -------------------
+   Scrollbar Styling
+------------------- */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d5db; /* gray-300 */
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af; /* gray-400 */
+}
+
+/* -------------------
+   Buttons (baseline)
+------------------- */
+button {
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+button:active {
+  transform: scale(0.97);
+}
+
+/* -------------------
+   Form Inputs
+------------------- */
+input,
+select,
+textarea {
+  border: 1px solid #d1d5db; /* gray-300 */
+  border-radius: 0.375rem; /* rounded-md */
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #2563eb; /* blue-600 */
+  box-shadow: 0 0 0 1px #2563eb;
+}
+
+/* -------------------
+   Utilities
+------------------- */
+.container {
+  @apply max-w-7xl mx-auto px-4;
+}
+
+.card {
+  @apply bg-white shadow-md rounded-2xl p-6 transition hover:shadow-lg;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #2563eb, #9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
