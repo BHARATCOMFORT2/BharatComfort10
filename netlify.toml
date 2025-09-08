@@ -1,7 +1,5 @@
 [build]
   command   = "npm run build"
-  publish   = ".next"
-  functions = "netlify/functions"
 
 [functions]
   node_bundler = "esbuild"
@@ -14,13 +12,7 @@
   command = "npm run dev"
   port = 3000
 
-# Redirects (SSR, dynamic routes for Next.js)
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-# Headers (security + caching)
+# Security Headers
 [[headers]]
   for = "/*"
   [headers.values]
