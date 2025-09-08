@@ -3,12 +3,22 @@ import GoogleProvider from "next-auth/providers/google";
 import EmailProvider from "next-auth/providers/email";
 import { FirestoreAdapter } from "@next-auth/firebase-adapter";
 import { cert } from "firebase-admin/app";
+import { getFirestore } from "firebase-admin/firestore";
+import { initializeApp, getApps } from "firebase-admin/app";
 
 const adminCert = {
   projectId: process.env.FIREBASE_PROJECT_ID,
   clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
   privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
 };
+
+// Initialize Firebase Admin once
+if (!getApps().length) {
+  initializeApp({
+    credential: cert(adminCert),
+  });
+}
+const db = getFirestore();
 
 export const authOptions: NextAuthOptions = {
   adapter: FirestoreAdapter({
@@ -44,7 +54,28 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        token.role = (user as any).role || "user";
+        // Check Firestore for role
+        const userRef = db.collection("users").doc(user.id as string);
+        const snap = await userRef.get();
+
+        if (!snap.exists) {
+          // First time user signup
+          const role = (await db.collection("users").count().get()).data().count === 0
+            ? "admin" // first user = admin
+            : "user"; // everyone else = user
+
+          await userRef.set({
+            id: user.id,
+            email: user.email,
+            name: user.name,
+            role,
+            createdAt: new Date(),
+          });
+
+          token.role = role;
+        } else {
+          token.role = snap.data()?.role || "user";
+        }
       }
       return token;
     },
