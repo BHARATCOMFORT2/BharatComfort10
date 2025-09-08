@@ -7,15 +7,13 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-# ✅ Redirects
-# Next.js already handles SSR & dynamic routes,
-# so we only need a fallback redirect for safety.
+# ✅ Redirects fallback
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-# ✅ Security Headers
+# ✅ Security headers
 [[headers]]
   for = "/*"
   [headers.values]
@@ -24,7 +22,7 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Content-Security-Policy = "default-src 'self' https://*.firebaseio.com https://*.stripe.com https://*.googleapis.com; img-src * data: blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.stripe.com https://*.firebaseio.com; style-src 'self' 'unsafe-inline';"
 
-# ✅ Caching for Next.js static assets
+# ✅ Cache static assets
 [[headers]]
   for = "/_next/static/*"
   [headers.values]
