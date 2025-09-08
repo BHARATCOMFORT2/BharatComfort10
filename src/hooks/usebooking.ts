@@ -8,11 +8,11 @@ interface BookingInput {
   listingId: string;
   nights: number;
   guests: number;
-  extras?: Record<string, number>; // e.g. { breakfast: 2 }
+  extras?: Record<string, number>;
 }
 
 interface BookingState {
-  step: "idle" | "review" | "payment" | "confirmed" | "error";
+  step: "idle" | "review" | "payment" | "confirmed" | "cancelled" | "error";
   loading: boolean;
   priceBreakdown?: ReturnType<typeof calculatePrice>;
   bookingId?: string;
@@ -78,10 +78,36 @@ export function useBooking() {
     });
   };
 
+  const cancelBooking = async (bookingId: string) => {
+    setState((prev) => ({ ...prev, loading: true }));
+
+    try {
+      const res = await fetch("/api/bookings/cancel", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ bookingId }),
+      });
+
+      if (!res.ok) throw new Error("Failed to cancel booking");
+
+      await res.json();
+
+      setState({
+        step: "cancelled",
+        loading: false,
+        bookingId,
+      });
+    } catch (err) {
+      Logger.error("Booking cancellation failed", { error: (err as Error).message });
+      setState({ step: "error", loading: false, error: "Cancellation failed" });
+    }
+  };
+
   return {
     state,
     startBooking,
     createPaymentIntent,
     confirmBooking,
+    cancelBooking,
   };
 }
