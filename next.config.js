@@ -31,3 +31,4 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+build.rollupOptions.external
