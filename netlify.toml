@@ -3,3 +3,6 @@
 
 [build.environment]
   NODE_VERSION = "18"
+[build]
+  command = "npm ls firebase && npm ls react-i18next && npm run build"
+  publish = ".next"
